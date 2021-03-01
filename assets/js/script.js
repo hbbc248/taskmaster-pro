@@ -30,7 +30,7 @@ var loadTasks = function() {
       done: []
     };
   }
-
+  
   // loop over object properties
   $.each(tasks, function(list, arr) {
     // then loop over sub-array
