@@ -250,19 +250,6 @@ var auditTask = function(taskEl) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // modal was triggered
 $("#task-form-modal").on("show.bs.modal", function() {
   // clear values
@@ -310,3 +297,10 @@ $("#remove-tasks").on("click", function() {
 loadTasks();
 
 
+
+// Run audit every 30 min for each task every 5 seg to verify if due date is getting closer
+setInterval(function () {
+  $(".card .list-group-item").each(function(index, el) {
+    auditTask(el);
+  });
+}, 1800000);
